@@ -89,31 +89,30 @@
     <div class="slide">
       <h1>Topics</h1>
       <ul>
-        <li>NISO JATS</li>
+        <li>JATS</li>
         <li>Some JATS Projects</li>
         <li>NCBI and RDF</li>
         <li>Eutils.org</li>
-        <li>Collaboration platforms</li>
-        <li>Questions</li>
+        <li>Collaboration platforms, questions</li>
       </ul>
     </div>
 
     <div class='slide'>
-      <h1>NISO JATS</h1>
+      <h1>JATS</h1>
       <ul>
         <li><a href='http://www.niso.org/apps/group_public/document.php?document_id=10591'>NISO
           Standard z39.96-2012</a></li>
         <li><a href='http://jats.nlm.nih.gov/'>NLM homepage</a></li>
-        <li>Three flavors:
+        <li>JATS design principles
           <ul>
-            <li>Green - <a href='http://jats.nlm.nih.gov/archiving/tag-library/1.1d1/'>Archiving</a> - loose</li>
-            <li>Purple - <a href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/'>Publishing</a> - moderately prescriptive</li>
-            <li>Pumpkin - <a href='http://jats.nlm.nih.gov/articleauthoring/tag-library/1.1d1/'>Authoring</a> - tight</li>
+            <li>Described in <a href='http://www.ncbi.nlm.nih.gov/books/NBK47099/'>Why Create a
+              Subset of a Public Tag Set</a>, Lapeyre, 2010 (among other places)</li>
+            <li>Captures current tagging practice</li>
+            <li>Descriptive not prescriptive</li>
+            <li>"JATS allows (by design) even very bad tagging practice!"</li>
           </ul>
         </li>
-        <li>But what do these mean?</li>
-        <li>Thesis:  markup semantics can be more tightly specified, without imposing undue burdens
-          on producers or users</li>
+        <li>Causes problems for document exchange and reuse</li>
       </ul>
     </div>
     
@@ -123,13 +122,10 @@
         <li>The <a
           href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?elem=license'>&lt;license&gt;
           element</a></li>
-        <li><a
-          href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?attr=xlink:href'>@xlink:href</a>
-        is "an address or identifier".</li>
+        <li>No prescriptions</li>
         <li><a
           href='https://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/dobs.html#dob-license'>PMC
-        Tagging Guidelines</a> - better, but license URI shouldn't go in
-          <a href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?elem=ext-link'>ext-link</a></li>
+        Tagging Guidelines</a> - better: specifies best practices</li>
       </ul>
     </div>
 
@@ -143,28 +139,49 @@
         <li><a
           href='http://www.niso.org/apps/group_public/download.php/12274/oami-comments-rev.docx'>My
           comments</a></li>
-        <li>The URI specified by &lt;license_ref&gt; is an identifier first and foremost, rather
-          than a web address.</li>
-        <li>See JSON-LD examples at the end.  Clear and unambiguous, <em>and</em> easy to use.</li>
+        <li>Question:  how to map these into JATS?
+          See (<a
+            href='http://www.biglist.com/lists/lists.mulberrytech.com/jats-list/archives/201401/msg00008.html'>discussion
+          on the JATS list</a>)</li>
+        <li>If/when the community decides the best practice, where will this be documented?</li>
       </ul>
     </div>
     
     <div class='slide'>
       <h1>JATS Projects</h1>
       <ul>
-        <li>JATS Tag Sets documentation</li>
-        <li>DtdAnalyzer - dtddocumentor</li>
-        <li>DtdAnalyzer - XML to JSON framework</li>
+        <li>Motivation:
+          <li>Improved documentation and communication of best practices</li>
+          <li>Make JATS easier to use</li>
+          <li>Foster collaboration</li>
+        </li>
+        <li>Recent projects:
+          <ul>
+            <li>JATS Tag Sets documentation</li>
+            <li>DtdAnalyzer - dtddocumentor</li>
+            <li>DtdAnalyzer - XML to JSON framework</li>
+          </ul>
+        </li>
       </ul>
     </div>
 
     <div class='slide'>
       <h1>JATS documentation projects</h1>
+      <p>
+        <img src='jatsdoc-diagram.png' width='600px'/>
+      </p>
+    </div>
+
+    <div class='slide'>
+      <h1>JATS documentation projects</h1>
       <ul>
-        <li><a href='http://jatspan.org/jatsdoc-tag-sets.html'>JATSDoc Tag Sets</a></li>
-        <li><a href='http://jatspan.org/niso/publishing-1.1d1/'>Publishing 1.1d1 in jatsdoc</a></li>
+        <li><a href='http://jatspan.org/niso/publishing-1.1d1/'>Tag sets (jatsdoc format)</a>
+          <ul>
+            <li><a href='http://jatspan.org/jatsdoc-tag-sets.html'>Others listed here</a></li>
+            <li><a href='https://github.com/Klortho/JatsTagLibrary'>JatsTagLibrary project on GitHub</a></li>
+          </ul>
+        </li>
         <li><a href='https://github.com/Klortho/jatsdoc'>jatsdoc</a> documentation framework</li>
-        <li><a href='https://github.com/Klortho/JatsTagLibrary'>JatsTagLibrary project on GitHub</a></li>
       </ul>
     </div>
     
@@ -173,10 +190,8 @@
       <ul>
         <li><a href='http://dtd.nlm.nih.gov/ncbi/dtdanalyzer/'>DtdAnalyzer</a> - documentation
           generator</li>
-        <li><a href='https://github.com/NCBITools/DtdAnalyzer'>GitHub NCBITools/DtdAnalyzer</a> - 
+        <li>Project at <a href='https://github.com/NCBITools/DtdAnalyzer'>GitHub NCBITools/DtdAnalyzer</a> - 
           collaboration with outside developer, Demian Hess</li>
-        <li>JATSCon paper: <a href='http://www.ncbi.nlm.nih.gov/books/NBK100354/'>DtdAnalyzer: A tool for 
-          analyzing and manipulating DTDs</a></li>
         <li><a href='http://jatspan.org/TaxPub/doc/'>TaxPub documentation</a> in jatsdoc</li>
         <li><a
           href='https://github.com/NCBITools/DtdAnalyzer/wiki/Overview-of-DTD-annotations'>Annotations
@@ -229,20 +244,24 @@
       <ul>
         <li><a href='http://www.ncbi.nlm.nih.gov/entrez/query/static/entrezlinks.html'>Entrez links
         - list</a></li>
-        <li>A lot like RDF predicates! But is it really LOD?</li>
-        <li>Identfiers don't have URIs, which means they aren't dereferenceable</li>
-        <li>And can't be
-          referred to by others (in an unambiguous machine readable way)</li>
-        <li>Can only be used to link NCBI databases to NCBI databases</li>
-        <li>Can't declare properties on these (to define, for example, reciprocal links)</li>
-        <li>Can't support SPARQL federated queries</li>
+        <li>A lot like RDF predicates!</li>
+        <li>But not quite LOD:
+          <ul>
+            <li>Identfiers don't have URIs, which means they aren't dereferenceable</li>
+            <li>And can't be
+              referred to by others (in an unambiguous machine readable way)</li>
+            <li>Can only be used to link NCBI databases to NCBI databases</li>
+            <li>Can't declare properties on these (to define, for example, reciprocal links)</li>
+            <li>Can't support SPARQL federated queries</li>
+          </ul>
+        </li>
       </ul>
     </div>
     
     <div class='slide'>
       <h1>NCBI RDF URI Standards</h1>
       <ul>
-        <li>Necessary first step.</li>
+        <li>To convert elinks to RDF, this is a <em>necessary first step</em></li>
         <li><a href='https://github.com/Klortho/rdf-uri-resolver/wiki/NCBI-RDF-URI-Standards'>NCBI RDF URI Standards</a></li>
         <li>Uses the new, dedicated http://rdf.ncbi.nlm.nih.gov/ base URI</li>
         <li><a href='https://github.com/Klortho/rdf-uri-resolver'>RDF URI Resolver project</a></li>
@@ -292,8 +311,7 @@
           </ul>
         </li>
         <li>Some bits are too complicated!</li>
-        <li>I want to get their <a href='http://purl.org/spar/jats2rdf'>mapping document</a>
-          onto a wiki</li>
+        <li><a href='http://purl.org/spar/jats2rdf'>Mapping document</a> could be useful</li>
       </ul>
     </div>
     
@@ -301,16 +319,8 @@
     <div class='slide'>
       <h1>Collaboration platforms</h1>
       <ul>
-        <li><a href='http://github.com/NCBITools'>GitHub NCBITools</a> (up to
-          <a href='https://github.com/NCBITools?tab=repositories'>6 repos</a>)</li>
         <li><a href='http://webservices.itcs.umich.edu/mediawiki/jats/index.php/Main_Page'>JATS
-          Wiki</a>; problems:
-          <ul>
-            <li>Too difficult to create an account</li>
-            <li><em>Fixed!</em> <s>If you're not logged in, https URLs do not work
-              (<a href='https://webservices.itcs.umich.edu/mediawiki/jats/index.php/Main_Page'>example</a>)</s></li>
-          </ul>
-        </li>
+          Wiki</a></li>
         <li><a href='http://jatspan.org/'>JATSPan</a> - the JATSPack Archive Network
           <ul>
             <li><a href='http://jatspan.org/docs/JatsCon2011Lightning/index.html'>JATSPack, JATSPAN, and
@@ -318,7 +328,7 @@
             <li><a href='http://jatspan.org/docs/JatsCon2011Lightning/slide-21.html'>Goals of that
               project</a></li>
             <li>
-              <img src='JATSPack-4.png' width='400px'/>
+              <img src='JATSPack-4.png' width='300px'/>
               </li>
           </ul>
         </li>
@@ -331,10 +341,10 @@
     <div class='slide'>
       <h1>Questions</h1>
       <ul>
-        <li>Am I crazy?</li>
-        <li>How might it be possible for the community to define "tagging guidelines
+        <li>How can we develop "tagging guidelines
           for the rest of us"?</li>
-        <li>What about collaboration venues in general?</li>
+        <li>Can we foster a community of developers around JATS?</li>
+        <li>Do we want to?</li>
       </ul>
     </div>
     
