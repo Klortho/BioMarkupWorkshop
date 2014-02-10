@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN"
+               "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      version='XHTML+RDFa 1.1'
+      lang="en"
+      xml:lang="en"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:cc="http://creativecommons.org/ns#"
+      typeof="cc:Work">
+  <head>
+    <title>Biodiversity Markup Talk</title>
+
+    <meta name="DC.language" scheme="ISO 639-2/T" content="eng" />
+    <meta name="DC.publisher" content="Chris Maloney" />
+    <meta name="DC.creator" content="Chris Maloney" />
+    <meta name="Author" content="Chris Maloney" />
+    <meta name="DC.title"
+      content="Biodiversity Markup Talk" />
+    <meta name="keywords"
+          content="biodiversity, xml, jats, rdf, eutils.org, dtdanalyzer" />
+
+    <meta name="duration" content="20" />
+    <link rel="stylesheet" href="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/Slidy2/styles/slidy.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript" src="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/Slidy2/scripts/slidy.js"></script>
+
+
+    <script type="text/javascript" src="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script type="text/javascript" src="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/SyntaxHighlighter-XQueryBrush/shBrushXQuery.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+    <link type="text/css" rel="stylesheet" href="http://www.ncbi.nlm.nih.gov/staff/maloneyc/lib/SyntaxHighlighter-XQueryBrush/shThemeXQuery.css"/>
+
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+  </head>
+
+  <body>
+    <!-- Background -->
+    <div class="background">
+    </div>
+
+    <div class="slide cover title">
+      <br clear="all" />
+      <h1>Biodiversity Markup Talk</h1>
+
+      <table>
+        <tr>
+          <td>
+            Chris Maloney, NCBI/NLM/NIH, Contractor with A-Tek, Inc.<br/>
+            &lt;<a href="mailto:maloneyc@ncbi.nlm.nih.gov">maloneyc@ncbi.nlm.nih.gov</a>&gt;<br/>
+            2/10/2014
+          </td>
+          <td>
+            <div class='license'>
+              <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+                <a rel="license"
+                   href="http://creativecommons.org/publicdomain/zero/1.0/">
+                  <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png"
+                    style="border-style: none;" alt="CC0" width='65px'/>
+                </a>
+                <br />
+                To the extent possible under law,
+                <a rel="dct:publisher"
+                   href="http://chrismaloney.org">
+                  <span property="dct:title">Chris Maloney</span></a>
+                has waived all copyright and related or neighboring rights to
+                <span property="dct:title">Biodiversity Markup Talk</span>.
+              This work is published from:
+              <span property="vcard:Country" datatype="dct:ISO3166"
+                    content="US" about="http://www.ncbi.nlm.nih.gov/staff/maloneyc/Presentations/XQueryInPortal/Slides.html">
+                United States</span>.
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="slide">
+      <h1>Topics</h1>
+      <ul>
+        <li>NISO JATS</li>
+        <li>Some JATS Projects</li>
+        <li>NCBI and RDF</li>
+        <li>Eutils.org</li>
+        <li>Collaboration platforms</li>
+        <li>Questions</li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>NISO JATS</h1>
+      <ul>
+        <li><a href='http://www.niso.org/apps/group_public/document.php?document_id=10591'>NISO
+          Standard z39.96-2012</a></li>
+        <li><a href='http://jats.nlm.nih.gov/'>NLM homepage</a></li>
+        <li>Three flavors:
+          <ul>
+            <li>Green - <a href='http://jats.nlm.nih.gov/archiving/tag-library/1.1d1/'>Archiving</a> - loose</li>
+            <li>Purple - <a href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/'>Publishing</a> - moderately prescriptive</li>
+            <li>Pumpkin - <a href='http://jats.nlm.nih.gov/articleauthoring/tag-library/1.1d1/'>Authoring</a> - tight</li>
+          </ul>
+        </li>
+        <li>But what do these mean?</li>
+        <li>Thesis:  markup semantics can be more tightly specified, without imposing undue burdens
+          on producers or users</li>
+      </ul>
+    </div>
+    
+    <div class='slide'>
+      <h1>License tagging (case study)</h1>
+      <ul>
+        <li>The <a
+          href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?elem=license'>&lt;license&gt;
+          element</a></li>
+        <li><a
+          href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?attr=xlink:href'>@xlink:href</a>
+        is "an address or identifier".</li>
+        <li><a
+          href='https://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/dobs.html#dob-license'>PMC
+        Tagging Guidelines</a> - better, but license URI shouldn't go in
+          <a href='http://jats.nlm.nih.gov/publishing/tag-library/1.1d1/?elem=ext-link'>ext-link</a></li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>NISO's Open Access Metadata and Indicators</h1>
+      <ul>
+        <li><a
+          href='http://www.niso.org/apps/group_public/download.php/12047/rp-22-201x_OA_indicators__draft_for_comments.pdf'>Draft
+        recommended practice</a></li>
+        <li><a href='http://www.niso.org/apps/group_public/document.php?document_id=12047'>Comments list</a></li>
+        <li><a
+          href='http://www.niso.org/apps/group_public/download.php/12274/oami-comments-rev.docx'>My
+          comments</a></li>
+        <li>The URI specified by &lt;license_ref&gt; is an identifier first and foremost, rather
+          than a web address.</li>
+        <li>See JSON-LD examples at the end.  Clear and unambiguous, <em>and</em> easy to use.</li>
+      </ul>
+    </div>
+    
+    <div class='slide'>
+      <h1>JATS Projects</h1>
+      <ul>
+        <li>JATS Tag Sets documentation</li>
+        <li>DtdAnalyzer - dtddocumentor</li>
+        <li>DtdAnalyzer - XML to JSON framework</li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>JATS documentation projects</h1>
+      <ul>
+        <li><a href='http://jatspan.org/jatsdoc-tag-sets.html'>JATSDoc Tag Sets</a></li>
+        <li><a href='http://jatspan.org/niso/publishing-1.1d1/'>Publishing 1.1d1 in jatsdoc</a></li>
+        <li><a href='https://github.com/Klortho/jatsdoc'>jatsdoc</a> documentation framework</li>
+        <li><a href='https://github.com/Klortho/JatsTagLibrary'>JatsTagLibrary project on GitHub</a></li>
+      </ul>
+    </div>
+    
+    <div class='slide'>
+      <h1>DtdAnalyzer - dtddocumentor</h1>
+      <ul>
+        <li><a href='http://dtd.nlm.nih.gov/ncbi/dtdanalyzer/'>DtdAnalyzer</a> - documentation
+          generator</li>
+        <li><a href='https://github.com/NCBITools/DtdAnalyzer'>GitHub NCBITools/DtdAnalyzer</a> - 
+          collaboration with outside developer, Demian Hess</li>
+        <li>JATSCon paper: <a href='http://www.ncbi.nlm.nih.gov/books/NBK100354/'>DtdAnalyzer: A tool for 
+          analyzing and manipulating DTDs</a></li>
+        <li><a href='http://jatspan.org/TaxPub/doc/'>TaxPub documentation</a> in jatsdoc</li>
+        <li><a
+          href='https://github.com/NCBITools/DtdAnalyzer/wiki/Overview-of-DTD-annotations'>Annotations
+        in Markdown</a></li>
+      </ul>
+    </div>
+ 
+
+    <div class='slide'>
+      <h1>DtdAnalyzer - XML to JSON framework</h1>
+      <p>
+        <img src='dtd2xml2json-diagram-small.png' width='600px'/>
+      </p>
+      <p>
+        Documentation: <a
+          href='https://github.com/NCBITools/DtdAnalyzer/wiki/Auto-generating-XML-to-JSON-conversion-XSLT'>on
+        GitHub</a>
+      </p>
+    </div>
+
+    <div class='slide'>
+      <h1>NCBI and RDF</h1>
+      <ul>
+        <li>E-utilities</li>
+        <li>E-links</li>
+        <li>NCBI RDF URI Standards</li>
+        <li>PubChem</li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>E-utilities</h1>
+      <ul>
+        <li><a href='http://www.ncbi.nlm.nih.gov/books/NBK25501/'>Entrez Programming Utilities</a></li>
+        <li>NCBI has <a href='http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi'>this many
+          databases</a> (51, at the time I write this)</li>
+        <li>They are all linked to together with the Entrez links database</li>
+        <li>Example: <a href='http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530188/'>this article</a>
+          → <a
+            href='http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pmc&id=3530188&linkname=pmc_taxonomy'>pmc_taxonomy</a>
+          → <a href='http://www.ncbi.nlm.nih.gov/taxonomy/9612'>canis lupus</a> (and 19 others).
+          (Interestingly, not <a href='http://www.ncbi.nlm.nih.gov/taxonomy/9615'>canis 
+          lupus familiaris</a>).
+        </li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>E-links</h1>
+      <ul>
+        <li><a href='http://www.ncbi.nlm.nih.gov/entrez/query/static/entrezlinks.html'>Entrez links
+        - list</a></li>
+        <li>A lot like RDF predicates! But is it really LOD?</li>
+        <li>Identfiers don't have URIs, which means they aren't dereferenceable</li>
+        <li>And can't be
+          referred to by others (in an unambiguous machine readable way)</li>
+        <li>Can only be used to link NCBI databases to NCBI databases</li>
+        <li>Can't declare properties on these (to define, for example, reciprocal links)</li>
+        <li>Can't support SPARQL federated queries</li>
+      </ul>
+    </div>
+    
+    <div class='slide'>
+      <h1>NCBI RDF URI Standards</h1>
+      <ul>
+        <li>Necessary first step.</li>
+        <li><a href='https://github.com/Klortho/rdf-uri-resolver/wiki/NCBI-RDF-URI-Standards'>NCBI RDF URI Standards</a></li>
+        <li>Uses the new, dedicated http://rdf.ncbi.nlm.nih.gov/ base URI</li>
+        <li><a href='https://github.com/Klortho/rdf-uri-resolver'>RDF URI Resolver project</a></li>
+        <li><a href='https://pubchem.ncbi.nlm.nih.gov/rdf/'>PubChem RDF</a> just released - using
+          this ID scheme</li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>Eutils.org</h1>
+      <ul>
+        <li><a href='http://Eutils.org'>Eutils.org</a></li>
+        <li>RESTful wrapper around E-utilities</li>
+        <li><a href='https://github.com/Klortho/eutils-org'>Project on GitHub</a></li>
+        <li>Will provide <a href='https://github.com/Klortho/Eutils-JSON'>JSON output soon</a>
+          (uses DtdAnalyzer's dtd2xml2json)</li>
+        <li>Starting to produce RDF.  Example: <a href='http://eutils.org/data?format=rdf'>list of Entrez
+          databases</a> </li>
+        <li><a href='https://github.com/Klortho/eutils-org'>GitHub project</a></li>
+        <li>Very easy to spin up your own!</li>
+      </ul>
+    </div>
+    
+    <div class='slide'>
+      <h1>JATS2RDF</h1>
+      <ul>
+        <li><a href='https://github.com/Klortho/eutils-org/wiki/JATS2RDF'>Documentation on GitHub
+          wiki</a></li>
+        <li>Example: <a href='http://eutils.org/data/pmc/14900?format=rdf'>PMC14900 in RDF</a></li>
+        <li><a
+          href='https://github.com/Klortho/eutils-org/issues?labels=jats2rdf&page=1&state=open'>GitHub
+          issues</a>, <a href='https://groups.google.com/forum/#!forum/jats2rdf'>jats2rdf Google group</a></li>
+        <li>Based on:
+          <ul>
+            <li>
+              <a href='http://www.ncbi.nlm.nih.gov/books/NBK100491/'>From Markup to Linked Data: 
+                Mapping NISO JATS v1.0 to RDF using the SPAR (Semantic Publishing and Referencing)
+                Ontologies</a>, Peroni, Lapeyre, and Shotton (graphs <a
+                  href='https://github.com/Klortho/eutils-org/wiki/JATS2RDF'>here</a>)
+            </li>
+            <li>
+              <a href='http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3804025/'>Biotea: RDFizing 
+                PubMed Central in support for the paper as an interface to the Web of Data</a>,
+              Garcia Castro, McLaughlin, and Garcia (see <a
+                href='http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3804025/figure/F2/'>graph</a>)
+            </li>
+          </ul>
+        </li>
+        <li>Some bits are too complicated!</li>
+        <li>I want to get their <a href='http://purl.org/spar/jats2rdf'>mapping document</a>
+          onto a wiki</li>
+      </ul>
+    </div>
+    
+    
+    <div class='slide'>
+      <h1>Collaboration platforms</h1>
+      <ul>
+        <li><a href='http://github.com/NCBITools'>GitHub NCBITools</a> (up to
+          <a href='https://github.com/NCBITools?tab=repositories'>6 repos</a>)</li>
+        <li><a href='http://webservices.itcs.umich.edu/mediawiki/jats/index.php/Main_Page'>JATS
+          Wiki</a>; problems:
+          <ul>
+            <li>Too difficult to create an account</li>
+            <li><em>Fixed!</em> <s>If you're not logged in, https URLs do not work
+              (<a href='https://webservices.itcs.umich.edu/mediawiki/jats/index.php/Main_Page'>example</a>)</s></li>
+          </ul>
+        </li>
+        <li><a href='http://jatspan.org/'>JATSPan</a> - the JATSPack Archive Network
+          <ul>
+            <li><a href='http://jatspan.org/docs/JatsCon2011Lightning/index.html'>JATSPack, JATSPAN, and
+            the JATS Bundle</a> in five minutes or less</li>
+            <li><a href='http://jatspan.org/docs/JatsCon2011Lightning/slide-21.html'>Goals of that
+              project</a></li>
+            <li>
+              <img src='JATSPack-4.png' width='400px'/>
+              </li>
+          </ul>
+        </li>
+        <li>Eutils.org is powered by <a href='http://exist-db.org/'>eXist</a>, which is
+          <a href='http://expath.org/modules/pkg/‎'>EXPath Packaging System</a> - aware
+        </li>
+      </ul>
+    </div>
+
+    <div class='slide'>
+      <h1>Questions</h1>
+      <ul>
+        <li>Am I crazy?</li>
+        <li>How might it be possible for the community to define "tagging guidelines
+          for the rest of us"?</li>
+        <li>What about collaboration venues in general?</li>
+      </ul>
+    </div>
+    
+
+
+  <!--
+    <div class='slide'>
+      <h1>heading</h1>
+      <div class='incremental'>
+        <p>
+          stuff
+        </p>
+      </div>
+    </div>
+  -->
+    
+
+  </body>
+</html>
